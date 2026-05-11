@@ -1,0 +1,25 @@
+# 渲染服务器（计算机 B）：从 mediamtx 拉多路 RTSP，融合位姿后推到 VR WebSocket 客户端
+mediamtx_host: "127.0.0.1"
+mediamtx_port: 8554
+rtsp_transport: "tcp"
+
+# 与 classroom 端 streams[].path 一致，二选一：
+# 1) 显式列表（任意数量、任意命名，只要 mediamtx 上存在该 path）
+stream_paths:
+  - cam0
+  - cam1
+  - cam2
+  - cam3
+
+# 2) 或删去 stream_paths，改用下面两行自动生成 cam0..cam{N-1}（与显式列表同时存在时优先 stream_paths）
+# stream_count: 4
+# stream_prefix: "cam"
+
+ws_listen_host: "0.0.0.0"
+ws_listen_port: 8765
+
+out_width: 1280
+out_height: 720
+target_fps: 30
+
+jpeg_quality: 85

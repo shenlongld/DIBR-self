@@ -1,0 +1,28 @@
+# 与 computerA/config 里 streams[].path 一一对应：有几路就保留几段，多删少复制改名即可
+# 文档: https://github.com/bluenviron/mediamtx
+#
+paths:
+  cam0:
+    source: publisher
+    record: yes
+    recordPath: ./recordings/cam0/%path/%Y-%m-%d_%H-%M-%S-%f
+    recordFormat: fmp4
+    recordSegmentDuration: 1s
+  cam1:
+    source: publisher
+    record: yes
+    recordPath: ./recordings/cam1/%path/%Y-%m-%d_%H-%M-%S-%f
+    recordFormat: fmp4
+    recordSegmentDuration: 1s
+  cam2:
+    source: publisher
+    record: yes
+    recordPath: ./recordings/cam2/%path/%Y-%m-%d_%H-%M-%S-%f
+    recordFormat: fmp4
+    recordSegmentDuration: 1s
+  cam3:
+    source: publisher
+    record: yes
+    recordPath: ./recordings/cam3/%path/%Y-%m-%d_%H-%M-%S-%f
+    recordFormat: fmp4
+    recordSegmentDuration: 1s

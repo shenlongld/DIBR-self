@@ -1,0 +1,44 @@
+# 教室端：推流到本机或 mediamtx 所在主机（计算机 A 或中心节点）
+# streams 列表长度 K 任意：有多少路相机就写多少项，path 需在 mediamtx / computerB 中一致（默认 cam0..camK-1）
+mediamtx_host: "127.0.0.1"
+mediamtx_port: 8554
+rtsp_transport: "tcp"
+
+video_encoder: "auto"
+
+streams:
+  - path: cam0
+    device_type: dshow
+    device: 'video=Integrated Camera'
+    width: 1280
+    height: 720
+    fps: 30
+    bitrate_kbps: 4000
+
+  # 按实际相机名称增删；可从「设备管理器」或 ffmpeg -list_devices true -f dshow -i dummy 查看
+  - path: cam1
+    device_type: dshow
+    device: 'video=USB Video Device'
+    width: 1280
+    height: 720
+    fps: 30
+    bitrate_kbps: 4000
+
+  - path: cam2
+    device_type: dshow
+    device: 'video=USB Video Device'
+    width: 1280
+    height: 720
+    fps: 30
+    bitrate_kbps: 4000
+
+  - path: cam3
+    device_type: dshow
+    device: 'video=USB Video Device'
+    width: 1280
+    height: 720
+    fps: 30
+    bitrate_kbps: 4000
+
+# Linux: device_type v4l2，device /dev/video0、/dev/video1 ...
+# 文件循环测试: device_type file, file: "D:/samples/test.mp4", width/height 可填 0
