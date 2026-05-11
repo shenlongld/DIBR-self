@@ -1,0 +1,6 @@
+# PC OpenXR 客户端：须使用 cmbruns 的 pyopenxr（import xr），不要装 PyPI 上名为 openxr 的其它包。
+# 若曾误装: pip uninstall openxr
+-r requirements.txt
+pyopenxr>=1.0.2404
+PyOpenGL>=3.1.7
+glfw>=2.6.0
